@@ -6,32 +6,48 @@
     <title>薛润泽个人主页</title>
     <link rel="stylesheet" href="styles/style.css">
     <style>
-        /* 新增图片样式 */
+        /* 新增图片容器样式 */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        .image-container {
+            width: 50vw;  /* 占据屏幕宽度50% */
+            max-width: 800px;
+            height: 50vh; /* 占据屏幕高度50% */
+            margin: 2rem auto;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
         .new-image {
-            width: 200px;
-            float: right; 
-            margin: 20px;
-            border-radius: 8px;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;  /* 保持原始比例[3](@ref) */
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* 悬停放大效果 */
+        .new-image:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">首页应该是薛润泽的大头照</a></li>
-                <!-- ...其他导航项保持不变... -->
-            </ul>
-        </nav>
-    </header>
-
     <main>
         <section id="home" class="hero">
-            <img src="show.png" alt="补充图片" class="new-image">
-            <h1>欢迎访问我的主页</h1>
-            <p>前端开发者 | 技术爱好者</p>
+            <div class="image-container">
+                <img src="show.png" alt="个人展示" class="new-image">
+            </div>
+            <h1>欢迎访问薛润泽主页</h1>
+            <p>亲爱的老师 | 亲爱的助教</p>
         </section>
-        <!-- ...其他section保持不变... -->
     </main>
 </body>
 </html>
